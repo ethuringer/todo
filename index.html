@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css\font-awesome-4.7.0\css\font-awesome.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>To-Do list manager</title>
 </head>
+
 <body>
     <div class="container">
         <h1>Daily To-Do list manager</h1>
         <div class="content__box">
             <div class="date">
-                <h2>Thursday</h2>
-                <h2>10-15-2020</h2>
+                <h2>Thursday<br>
+                    10-15-2020</h2>
+
             </div>
-            <div class="input">
-                <input type="text" placeholder="Take the garbage out">
-                <button><i class="fa fa-plus"></i></button>
+            <div class="todo__input">
+                <input class="input__item" type="text" placeholder="Take the garbage out">
+                <button class="add__item"><i class="fa fa-plus"></i></button>
             </div>
             <div class="notodos__content">
-                <img src="" alt="">
+                <img src="css/beer.png" alt="cheers" style="width:50px">
                 <h3>Time to chill! You have no todos.</h3>
             </div>
             <div class="pending__content">
                 <p>You have ... pending items</p>
-                <input class="pending__item" type="checkbox" id="pending1" name="something" value="something">
-                <label for="pending1"> Something</label>
-                <button class="delete__item"><i class="fa fa-trash"></i></button>
-                <input class="pending__item" type="checkbox" id="pending2" name="something" value="something">
-                <label for="pending2"> Something</label>
-                <button class="delete__item"><i class="fa fa-trash"></i></button>
+                <div class="pending__item">
+                    <input class="pending__check" type="checkbox" id="pending1" name="something" value="something">
+                    <label class="pending__text" for="pending1"> Something</label>
+                    <button class="delete__item"><i class="fa fa-trash"></i></button>
+                </div>
+                <div class="pending__item">
+                    <input class="pending__check" type="checkbox" id="pending2" name="something" value="something">
+                    <label class="pending__text" for="pending2"> Something</label>
+                    <button class="delete__item"><i class="fa fa-trash"></i></button>
+                </div>
             </div>
             <div class="completed__content">
                 <p>Completed tasks: 50%</p>
-                <input class="completed__item" type="checkbox" id="completed1" name="something" value="something" checked>
-                <label for="completed1"> Something</label>
-                <input class="completed__item" type="checkbox" id="completed2" name="something" value="something" checked>
-                <label for="completed2"> Something</label>
+                <div class="completed__item">
+                    <input class="completed__check" type="checkbox" id="pending1" name="something" value="something" checked>
+                    <label class="completed__text" for="pending1"> Something</label>
+                </div>
+                <div class="completed__item">
+                    <input class="completed__check" type="checkbox" id="pending2" name="something" value="something" checked>
+                    <label class="completed__text" for="pending2"> Something</label>
+                </div>
             </div>
             <div class="footer__content">
-                <button>Show Complete</button>
-                <button>Clear All</button>
+                <button class="show__button">Show Complete</button>
+                <button class="clear__button">Clear All</button>
             </div>
         </div>
     </div>
 
     <script src="./js/todo"></script>
 </body>
+
 </html>
