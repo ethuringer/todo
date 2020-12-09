@@ -34,6 +34,9 @@ h1 {
 .date {
     color: rgb(221, 58, 58);
     line-height: 2.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 50%;
 }
 
 .todo__input {
@@ -78,10 +81,13 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    display: none;
 }
 
 .pending__content {
+    display: none;
+}
+
+.pending__content--visible{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -127,7 +133,7 @@ width: 35px;
     flex-direction: column;
 }
 
-.completed__item {
+.completed__item--visible {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -136,6 +142,10 @@ width: 35px;
     justify-content: space-between;
     margin-top: 1rem;
     height: 2.5rem;
+}
+
+.completed__item {
+    display: none;
 }
 
 .completed__text {
