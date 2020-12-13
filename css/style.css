@@ -85,7 +85,15 @@ h4 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation-name: appear;
+    animation-duration: 1s;
 }
+
+@keyframes appear {
+    from {opacity: 10%;}
+    to {opacity: 100%;}
+  }
+  
 
 .pending__content {
     display: flex;
@@ -107,8 +115,8 @@ h4 {
 }
 
 @keyframes swim {
-    0%   {left:50px; top:0px;}
-    100%  {left:0px; top:0px;}
+    0%   {left:50px;}
+    100%  {left:0px;}
 }
 
 .pending__check, .completed__check {

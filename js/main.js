@@ -8,6 +8,7 @@ const counterContent = document.querySelector('.counter')
 const notodosContent = document.querySelector('.notodos__content');
 const showHideButton = document.querySelector('.show__button');
 const clearButton = document.querySelector('.clear__button');
+const completedTitle = document.querySelector('.completed__title');
 
 let storageId = 1;
 let counter = 0;
@@ -38,6 +39,11 @@ const counterUpdate = (direction) => {
     if (direction) counter += 1;
     else counter -= 1;
     counterContent.textContent = counter;
+    if (counter === 0) {
+        notodosContent.classList.remove('hide');
+    } else {
+        notodosContent.classList.add('hide');
+    }
 }
 
 // Delete items from html and local storage
@@ -89,7 +95,6 @@ function addTodoItem() {
         return
     };
 
-    // notodosContent.style.display = 'none';
     createTodoItem(inputItem.value, storageId, 1);
     localStorage.setItem(storageId.toString(), JSON.stringify(
         {
@@ -113,17 +118,21 @@ Object.keys(localStorage).forEach((key) => {
     if (parseInt(key) >= storageId) storageId = parseInt(key) + 1;
 });
 
+// Show completed todos
 function setShowHide() {
     const btnContent = showHideButton.textContent;
     if (btnContent == 'Show Complete') {
+        completedTitle.classList.remove('hide');
         completedContent.classList.remove('hide');
         showHideButton.textContent = 'Hide Complete';
     } else {
+        completedTitle.classList.add('hide');
         completedContent.classList.add('hide');
         showHideButton.textContent = 'Show Complete';
     }
 }
 
+// Clear all pending todos from list and local storage
 function clearAll() {
     Object.keys(localStorage).forEach((key) => {
         const obj = JSON.parse(localStorage.getItem(key));
